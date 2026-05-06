@@ -1,6 +1,9 @@
 #include <iostream>
+#include "task.h"
+using namespace std;
 
 int main() {
-    std::cout << "Task CLI - Up and running!" << std::endl;
+    Task task1("Pull weeds", false);
+    cout << task1.getStatus();
     return 0;
 }
