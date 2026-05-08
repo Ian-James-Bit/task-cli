@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(include)
 
-add_executable(task-cli src/main.cpp src/task.cpp)
+add_executable(task-cli src/main.cpp src/task.cpp src/taskList.cpp)

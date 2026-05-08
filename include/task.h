@@ -4,18 +4,19 @@
 #include <string>
 using namespace std;
 class Task {
-private:
-    string description;
-    bool status;
+    private:
+        //instance variables
+        string description;
+        bool status;
 
-public:
-    Task(string description,bool status);
+    public:
+        //constructor
+        Task(string description,bool status);
 
-// Method declarations
-    string getDescription() const;
-    bool getStatus() const;
-    void setDescription(string description);
-    void setStatus(bool status);
-
+        //set and get methods
+        string getDescription() const;
+        bool getStatus() const;
+        void setDescription(string description);
+        void setStatus(bool status);
 };
 #endif // TASK_H
