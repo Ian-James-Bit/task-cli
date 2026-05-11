@@ -39,21 +39,37 @@ int main() {
         temp=Task(task.substr(0,index),stoi(task.substr(index+1)));
         tasks.add(temp);
     }
-    tasks.readLine();
+    if(!in.fail()){
+        in.close();
+    }
+    //tasks.readLine();
     //interface
-    // int answer;
-    // while(true){
-    //     cout<< "Would you like to:\n1.List Tasks\n2.Add a Task\n3.Remove a Task\n4.Change a Task's Status\n";
-    //     cin >> answer;
-    //     if(answer==1){
-
-    //     }else if(answer==2){
-
-    //     }else if(answer==3){
-
-    //     }else{
-
-    //     }
-    // }
+    int answer;
+    while(true){
+        cout<< "Would you like to:\n1.List Tasks\n2.Add a Task\n3.Remove a Task\n4.Change a Task's Status\n(-1)To Exit\n";
+        cin >> answer;
+        if(answer==1){
+            tasks.readLine();
+        }else if(answer==2){
+            cin.ignore();
+            tasks.addTask();
+        }else if(answer==3){
+            cin.ignore();
+            tasks.removeTask();
+        }else if(answer==4){
+            cin.ignore();
+            tasks.changeTaskStatus();
+        }
+        else{
+            //write tasks to file to save
+            ofstream out;
+            out.open("../data/tasks.txt");
+            for(int i=0;i<tasks.getTaskList().size();i++){
+                out << tasks.getTaskList().at(i).getDescription() << ";" <<tasks.getTaskList().at(i).getStatus() << endl;
+            }
+            out.close();
+            break;
+        }
+    }
     return 0;
 }
