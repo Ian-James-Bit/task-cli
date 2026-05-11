@@ -11,7 +11,18 @@ taskList :: taskList(vector<Task> Tasks){
 vector<Task> taskList :: getTaskList() const{
     return Tasks;
 }
-
+void taskList :: setTaskList(vector<Task> Tasks){
+    this->Tasks=Tasks;
+}
+void taskList :: add(Task task){
+    Tasks.push_back(task);
+}
+void taskList :: readLine(){
+    cout << "Tasks: \n";
+    for(int i=0;i<Tasks.size();i++){
+        cout << i+1 << ": " << Tasks[i].getDescription() << " Completed: "<< boolalpha << Tasks[i].getStatus() << endl;
+    }
+}
 void taskList :: addTask(){
     cout<<"What is your task? "<< endl;
     string description;
@@ -25,9 +36,7 @@ void taskList :: addTask(){
 
 void taskList :: removeTask(){
     cout<< "Which task would you like to remove?"<< endl;
-    for(int i=0;i<Tasks.size();i++){
-        cout << i+1 << ": " << Tasks[i].getDescription() << ";" << Tasks[i].getStatus() << endl;
-    }
+    readLine();
     int answer;
     cin >> answer;
     Tasks.erase(Tasks.begin()+answer-1);
@@ -35,9 +44,7 @@ void taskList :: removeTask(){
 
 void taskList :: changeTaskStatus(){
     cout<< "Which task's status would you like to change?"<< endl;
-    for(int i=0;i<Tasks.size();i++){
-        cout << i+1 << ": " << Tasks[i].getDescription() << ";" << Tasks[i].getStatus() << endl;
-    }
+    readLine();
     int answer;
     cin >> answer;
     if(Tasks[answer-1].getStatus()){

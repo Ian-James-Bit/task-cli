@@ -1,0 +1,4 @@
+Walk the Dog;0
+Milk the Cow;0
+Go Exercise;0
+Finish Homework;1

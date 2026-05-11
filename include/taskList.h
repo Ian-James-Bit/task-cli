@@ -7,11 +7,17 @@
 using namespace std;
 class taskList{
     private:
+        //instace variable
         vector<Task> Tasks;
     public:
+        //constructor
         taskList(vector<Task> Tasks);
 
+        //get and set function
         vector<Task> getTaskList() const;
+        void setTaskList(vector<Task> Tasks);
+        void add(Task task);
+        void readLine();
         void addTask();
         void removeTask();
         void changeTaskStatus();
